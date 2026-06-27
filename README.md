@@ -1,13 +1,13 @@
 # Multimodal-Brain-Tumor-Detection
 
-A multimodal deep learning framework for brain tumor classification using **Computed Tomography (CT)** and **Magnetic Resonance Imaging (MRI)**. The proposed framework integrates **Vision Mamba**, **Supervised Contrastive Learning**, **Prototype Cross-Attention**, and **Explainable AI (XAI)** to learn robust multimodal representations for brain tumor detection.
+A multimodal deep learning framework for **brain tumor classification** using paired **Computed Tomography (CT)** and **Magnetic Resonance Imaging (MRI)** images. The proposed framework integrates **Vision Mamba**, **Supervised Contrastive Learning**, **Prototype Cross-Attention**, and **Explainable AI (XAI)** to learn robust multimodal feature representations for brain tumor detection.
 
 ---
 
 ## Proposed Architecture
 
 <p align="center">
-  <img src="architecture/model_architecture.png" width="1000">
+  <img src="architecture/model_architecture.png" width="1000" alt="Proposed Architecture">
 </p>
 
 <p align="center">
@@ -18,11 +18,11 @@ A multimodal deep learning framework for brain tumor classification using **Comp
 
 ## Proposed Approach
 
-The proposed framework utilizes paired **CT** and **MRI** images to exploit complementary anatomical information from both imaging modalities. Each modality is processed independently through a dedicated **Vision Mamba** encoder, enabling the extraction of modality-specific spatial features while preserving the intrinsic characteristics of CT and MRI scans. The extracted features are subsequently projected into a shared latent space through a **Shared Projection Head**, producing a unified feature representation.
+The proposed framework utilizes paired **CT** and **MRI** images to exploit complementary anatomical information from both imaging modalities. Each modality is processed independently through a dedicated **Vision Mamba** encoder for modality-specific feature extraction. The extracted representations are projected into a shared latent space through a **Shared Projection Head**, enabling unified multimodal representation learning.
 
-To improve feature discrimination, the projected embeddings are optimized using **Supervised Contrastive Learning**, encouraging compact intra-class representations while increasing inter-class separation. The learned representations are further refined through a **Prototype Cross-Attention** module, where image features interact with learnable class prototypes to obtain prototype-guided feature embeddings.
+To enhance feature discrimination, the shared embeddings are optimized using **Supervised Contrastive Learning**, encouraging compact intra-class representations and improved inter-class separation. The learned representations are subsequently refined through a **Prototype Cross-Attention** module, where image features interact with learnable class prototypes to obtain prototype-guided embeddings.
 
-Finally, the refined representations are classified using an **L2 Distance Classifier**. To improve interpretability, the framework incorporates **Explainable AI (XAI)** through **Grad-CAM++**, prototype similarity analysis, attention visualization, and **UMAP** feature embeddings.
+Finally, the refined feature representations are classified using an **L2 Distance Classifier**. To improve interpretability, the framework incorporates **Explainable AI (XAI)** through **Grad-CAM++**, **UMAP** feature visualization, and **Prototype Similarity Analysis**, providing additional insight into the model's decision-making process.
 
 ---
 
@@ -34,13 +34,15 @@ Finally, the refined representations are classified using an **L2 Distance Class
 * Supervised Contrastive Learning
 * Prototype Cross-Attention
 * L2 Distance-based classification
-* Explainable AI (Grad-CAM++, UMAP, Prototype Similarity Analysis)
+* Explainable AI (Grad-CAM++, UMAP, and Prototype Similarity Analysis)
 * Robust evaluation using **5-fold cross-validation**
-* Designed to support large-scale multimodal medical imaging datasets
+* Designed for scalable multimodal medical image analysis
 
 ---
 
 ## Environment
+
+The framework was developed and evaluated using the following environment.
 
 | Component | Specification                |
 | --------- | ---------------------------- |
@@ -50,21 +52,21 @@ Finally, the refined representations are classified using an **L2 Distance Class
 | PyTorch   | 2.x                          |
 | CUDA      | 12.x                         |
 
-The framework is compatible with any CUDA-enabled GPU with sufficient memory.
+The framework is compatible with CUDA-enabled GPUs with sufficient memory.
 
 ---
 
 ## Documentation
 
-The repository documentation is organized as follows:
+The repository documentation is organized as follows.
 
 | File           | Description                                  |
 | -------------- | -------------------------------------------- |
 | `DATASET.md`   | Dataset overview and download instructions   |
-| `INSTALL.md`   | Environment setup and installation           |
+| `INSTALL.md`   | Installation and environment setup           |
 | `TRAINING.md`  | Training methodology and evaluation protocol |
 | `INFERENCE.md` | Inference workflow                           |
-| `RESULTS.md`   | Evaluation summary and future result updates |
+| `RESULTS.md`   | Evaluation summary and future updates        |
 
 ---
 
@@ -107,22 +109,26 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Open:
+Open the project notebook:
 
 ```text
 notebooks/Multimodal_Brain_Tumor_Detection.ipynb
 ```
 
-Refer to **INSTALL.md**, **TRAINING.md**, and **INFERENCE.md** for detailed instructions.
+For complete setup and usage instructions, refer to:
+
+* `INSTALL.md`
+* `TRAINING.md`
+* `INFERENCE.md`
 
 ---
 
 ## Citation
 
-Citation information will be added following publication of the associated research paper.
+The citation information will be added following publication of the associated research paper.
 
 ---
 
 ## License
 
-This project is released under the **MIT License**. See the `LICENSE` file for details.
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
