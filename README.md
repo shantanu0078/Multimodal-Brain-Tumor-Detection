@@ -1,6 +1,12 @@
-# Multimodal-Brain-Tumor-Detection
+# Multimodal Brain Tumor Detection
 
-A multimodal deep learning framework for **brain tumor classification** using paired **Computed Tomography (CT)** and **Magnetic Resonance Imaging (MRI)** images. The proposed framework integrates **Vision Mamba**, **Supervised Contrastive Learning**, **Prototype Cross-Attention**, and **Explainable AI (XAI)** to learn robust multimodal feature representations for brain tumor detection.
+A multimodal deep learning framework for **brain tumor classification** using paired **Computed Tomography (CT)** and **Magnetic Resonance Imaging (MRI)** images. The proposed framework integrates **Vision Mamba**, **Supervised Contrastive Learning**, **Prototype Cross-Attention**, and **Explainable AI (XAI)** to learn discriminative multimodal feature representations for accurate brain tumor classification.
+
+---
+
+## Project Status
+
+This repository accompanies an ongoing research project. The implementation, documentation, and experimental pipeline are complete. Citation details and quantitative evaluation results will be updated following publication of the associated research paper.
 
 ---
 
@@ -18,11 +24,11 @@ A multimodal deep learning framework for **brain tumor classification** using pa
 
 ## Proposed Approach
 
-The proposed framework utilizes paired **CT** and **MRI** images to exploit complementary anatomical information from both imaging modalities. Each modality is processed independently through a dedicated **Vision Mamba** encoder for modality-specific feature extraction. The extracted representations are projected into a shared latent space through a **Shared Projection Head**, enabling unified multimodal representation learning.
+The proposed framework processes paired **CT** and **MRI** images through dedicated **Vision Mamba** encoders to extract modality-specific feature representations. These representations are projected into a shared latent space using a **Shared Projection Head**, enabling unified multimodal feature learning.
 
-To enhance feature discrimination, the shared embeddings are optimized using **Supervised Contrastive Learning**, encouraging compact intra-class representations and improved inter-class separation. The learned representations are subsequently refined through a **Prototype Cross-Attention** module, where image features interact with learnable class prototypes to obtain prototype-guided embeddings.
+The shared embeddings are optimized using **Supervised Contrastive Learning** to improve class discrimination. The resulting feature representations are refined through a **Prototype Cross-Attention** module, where image features interact with learnable class prototypes to generate prototype-guided embeddings. Final predictions are produced using an **L2 Distance Classifier**.
 
-Finally, the refined feature representations are classified using an **L2 Distance Classifier**. To improve interpretability, the framework incorporates **Explainable AI (XAI)** through **Grad-CAM++**, **UMAP** feature visualization, and **Prototype Similarity Analysis**, providing additional insight into the model's decision-making process.
+Model interpretability is enhanced through an integrated **Explainable AI (XAI)** pipeline comprising **Grad-CAM++**, **UMAP** feature visualization, and **Prototype Similarity Analysis**.
 
 ---
 
@@ -42,7 +48,7 @@ Finally, the refined feature representations are classified using an **L2 Distan
 
 ## Environment
 
-The framework was developed and evaluated using the following environment.
+The proposed framework was developed and evaluated using the following software and hardware environment.
 
 | Component | Specification                |
 | --------- | ---------------------------- |
@@ -58,7 +64,7 @@ The framework is compatible with CUDA-enabled GPUs with sufficient memory.
 
 ## Documentation
 
-The repository documentation is organized as follows.
+Additional documentation is provided in the following files.
 
 | File           | Description                                  |
 | -------------- | -------------------------------------------- |
@@ -109,13 +115,13 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Open the project notebook:
+Launch the Jupyter notebook:
 
 ```text
 notebooks/Multimodal_Brain_Tumor_Detection.ipynb
 ```
 
-For complete setup and usage instructions, refer to:
+For detailed setup and usage instructions, refer to:
 
 * `INSTALL.md`
 * `TRAINING.md`
@@ -123,9 +129,26 @@ For complete setup and usage instructions, refer to:
 
 ---
 
+## Contributors
+
+This repository accompanies a collaborative research project developed by a team of three members.
+
+**Shantanu Mandal**
+
+**Primary Contributions**
+
+* Implementation of the proposed multimodal deep learning framework
+* Development of the training and evaluation pipeline
+* Model training, experimental evaluation, and hyperparameter optimization
+* Integration of Explainable AI (Grad-CAM++, UMAP, and Prototype Similarity Analysis)
+* Contributions to the design and development of the proposed framework
+* Repository organization and technical documentation
+
+---
+
 ## Citation
 
-The citation information will be added following publication of the associated research paper.
+Citation information will be provided following publication of the associated research paper.
 
 ---
 
